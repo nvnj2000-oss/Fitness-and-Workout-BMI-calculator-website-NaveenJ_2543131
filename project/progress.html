@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Progress Tracker - Fitness Guide</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+<div class="app-wrapper">
+
+  <button class="sidebar-toggle" id="sidebarToggle">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <aside class="sidebar">
+    <!-- same sidebar -->
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <i class="fa-solid fa-dumbbell"></i>
+      </div>
+      <div>
+        <div class="sidebar-title">FitTrack</div>
+        <div class="sidebar-sub">Fitness & Nutrition</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="nav-section-title">Main</div>
+      <ul class="nav-list">
+        <li><a href="home.html" class="nav-link"><i class="fa-solid fa-house"></i>Home</a></li>
+        <li><a href="login.html" class="nav-link"><i class="fa-solid fa-right-to-bracket"></i>Login</a></li>
+        <li><a href="register.html" class="nav-link"><i class="fa-solid fa-user-plus"></i>Create Account</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="nav-section-title">Tools</div>
+      <ul class="nav-list">
+        <li><a href="bmi.html" class="nav-link"><i class="fa-solid fa-scale-balanced"></i>BMI Calculator</a></li>
+        <li><a href="workouts.html" class="nav-link"><i class="fa-solid fa-person-running"></i>Workout Plans</a></li>
+        <li><a href="diets.html" class="nav-link"><i class="fa-solid fa-bowl-food"></i>Diet Plans</a></li>
+        <li><a href="progress.html" class="nav-link"><i class="fa-solid fa-chart-line"></i>Progress</a></li>
+        <li><a href="faq.html" class="nav-link"><i class="fa-regular fa-circle-question"></i>FAQ</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="main-header">
+      <button class="theme-toggle" id="themeToggle">
+        <i class="fa-regular fa-sun"></i>
+        <span>Light mode</span>
+      </button>
+    </header>
+
+    <div class="content">
+      <div class="card">
+        <div class="section-title">Progress Tracker</div>
+        <p class="subtext">
+          Write one line each time you do something good for your body —
+          a walk, workout, good meal, or even “slept on time”.
+        </p>
+
+        <div class="form-group">
+          <label><i class="fa-regular fa-pen-to-square"></i> Your entry</label>
+          <input id="progressEntry" placeholder="Example: Walked 4,000 steps today">
+        </div>
+
+        <button class="btn-full" onclick="handleSaveProgress()">
+          <i class="fa-solid fa-floppy-disk"></i> Save entry
+        </button>
+
+        <div class="message" id="progressMsg"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">Your recent entries</div>
+        <ul class="list" id="progressList"></ul>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+function renderProgress() {
+  const list = document.getElementById('progressList');
+  const entries = getProgress();
+  list.innerHTML = '';
+
+  if (!entries.length) {
+    list.innerHTML = '<li class="list-item"><div class="list-item-main"><div class="list-item-title">No entries yet.</div><div class="list-item-sub">Once you log progress, it will appear here.</div></div></li>';
+    return;
+  }
+
+  entries.slice().reverse().forEach((e, index) => {
+    const li = document.createElement('li');
+    li.className = 'list-item';
+    li.innerHTML = `
+      <div class="list-item-main">
+        <div class="list-item-title">${e}</div>
+        <div class="list-item-sub">Entry #${entries.length - index}</div>
+      </div>
+      <span class="chip"><i class="fa-solid fa-check"></i></span>
+    `;
+    list.appendChild(li);
+  });
+}
+
+function handleSaveProgress(){
+  const input = document.getElementById('progressEntry');
+  const res = saveProgress(input.value.trim());
+  document.getElementById('progressMsg').textContent = res.message;
+  if (res.ok){
+    input.value = '';
+    renderProgress();
+  }
+}
+
+renderProgress();
+</script>
+
+</body>
+</html>

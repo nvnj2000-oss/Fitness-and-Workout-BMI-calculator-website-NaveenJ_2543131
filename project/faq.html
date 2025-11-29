@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>FAQ - Fitness Guide</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+<div class="app-wrapper">
+
+  <button class="sidebar-toggle" id="sidebarToggle">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <aside class="sidebar">
+    <!-- same sidebar -->
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <i class="fa-solid fa-dumbbell"></i>
+      </div>
+      <div>
+        <div class="sidebar-title">FitTrack</div>
+        <div class="sidebar-sub">Fitness & Nutrition</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="nav-section-title">Main</div>
+      <ul class="nav-list">
+        <li><a href="home.html" class="nav-link"><i class="fa-solid fa-house"></i>Home</a></li>
+        <li><a href="login.html" class="nav-link"><i class="fa-solid fa-right-to-bracket"></i>Login</a></li>
+        <li><a href="register.html" class="nav-link"><i class="fa-solid fa-user-plus"></i>Create Account</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="nav-section-title">Tools</div>
+      <ul class="nav-list">
+        <li><a href="bmi.html" class="nav-link"><i class="fa-solid fa-scale-balanced"></i>BMI Calculator</a></li>
+        <li><a href="workouts.html" class="nav-link"><i class="fa-solid fa-person-running"></i>Workout Plans</a></li>
+        <li><a href="diets.html" class="nav-link"><i class="fa-solid fa-bowl-food"></i>Diet Plans</a></li>
+        <li><a href="progress.html" class="nav-link"><i class="fa-solid fa-chart-line"></i>Progress</a></li>
+        <li><a href="faq.html" class="nav-link"><i class="fa-regular fa-circle-question"></i>FAQ</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="main-header">
+      <button class="theme-toggle" id="themeToggle">
+        <i class="fa-regular fa-sun"></i>
+        <span>Light mode</span>
+      </button>
+    </header>
+
+    <div class="content">
+      <div class="card">
+        <div class="section-title">Frequently Asked Questions</div>
+        <div class="subtext">Some common doubts answered in simple language.</div>
+
+        <div class="faq-item">
+          <div class="faq-q"><i class="fa-solid fa-clock-rotate-left"></i> How often should I workout?</div>
+          <div class="faq-a">
+            Start with 3–4 days a week. Even 20 minutes counts. Consistency is more important than perfection.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q"><i class="fa-solid fa-bowl-food"></i> Do I need a special diet?</div>
+          <div class="faq-a">
+            Not always. Focus on regular meals, enough protein, vegetables, and controlling junk/snacks.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q"><i class="fa-solid fa-database-slash"></i> Where is my data stored?</div>
+          <div class="faq-a">
+            Everything (account + progress) is stored only inside your browser using localStorage.
+            If you clear browser data, it will reset.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q"><i class="fa-solid fa-user-shield"></i> Is this a medical tool?</div>
+          <div class="faq-a">
+            No. This is a simple learning project and basic guide. For medical advice, always talk to a doctor or professional.
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

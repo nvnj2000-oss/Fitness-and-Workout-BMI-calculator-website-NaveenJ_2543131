@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Fitness & Nutrition Guide - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+<div class="app-wrapper">
+
+  <button class="sidebar-toggle" id="sidebarToggle">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <i class="fa-solid fa-dumbbell"></i>
+      </div>
+      <div>
+        <div class="sidebar-title">FitTrack</div>
+        <div class="sidebar-sub">Fitness & Nutrition</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="nav-section-title">Main</div>
+      <ul class="nav-list">
+        <li><a href="home.html" class="nav-link"><i class="fa-solid fa-house"></i>Home</a></li>
+        <li><a href="login.html" class="nav-link"><i class="fa-solid fa-right-to-bracket"></i>Login</a></li>
+        <li><a href="register.html" class="nav-link"><i class="fa-solid fa-user-plus"></i>Create Account</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="nav-section-title">Tools</div>
+      <ul class="nav-list">
+        <li><a href="bmi.html" class="nav-link"><i class="fa-solid fa-scale-balanced"></i>BMI Calculator</a></li>
+        <li><a href="workouts.html" class="nav-link"><i class="fa-solid fa-person-running"></i>Workout Plans</a></li>
+        <li><a href="diets.html" class="nav-link"><i class="fa-solid fa-bowl-food"></i>Diet Plans</a></li>
+        <li><a href="progress.html" class="nav-link"><i class="fa-solid fa-chart-line"></i>Progress</a></li>
+        <li><a href="faq.html" class="nav-link"><i class="fa-regular fa-circle-question"></i>FAQ</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="main-header">
+      <button class="theme-toggle" id="themeToggle">
+        <i class="fa-regular fa-sun"></i>
+        <span>Light mode</span>
+      </button>
+    </header>
+
+    <div class="content">
+      <div class="card hero">
+        <div class="hero-main">
+          <div class="hero-kicker">YOUR SIMPLE FITNESS HUB</div>
+          <div class="hero-title">Track your body, not just the numbers.</div>
+          <div class="hero-sub">
+            Calculate your BMI, explore beginner-friendly workouts, plan meals,
+            and keep a simple log of your daily progress — all in one place.
+          </div>
+
+          <div class="hero-actions">
+            <a href="bmi.html" class="btn-primary">
+              <i class="fa-solid fa-scale-balanced"></i>
+              Check my BMI
+            </a>
+            <a href="login.html" class="btn-outline">
+              <i class="fa-solid fa-right-to-bracket"></i>
+              Login to continue
+            </a>
+          </div>
+
+          <div class="hero-badge-row">
+            <div class="hero-badge"><i class="fa-regular fa-clock"></i> 5 min to get started</div>
+            <div class="hero-badge"><i class="fa-solid fa-user-shield"></i> Offline / Local only</div>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="hero-metric">
+            <div class="hero-metric-row">
+              <div>
+                <div class="hero-metric-label">Today’s goal</div>
+                <div class="hero-metric-value">7,500 <span style="font-size:13px;">steps</span></div>
+              </div>
+              <i class="fa-solid fa-person-running"></i>
+            </div>
+            <div class="hero-metric-row">
+              <div class="hero-metric-label">Streak</div>
+              <div class="hero-metric-tag">
+                <i class="fa-solid fa-fire-flame-curved"></i>
+                Day 3
+              </div>
+            </div>
+            <div style="margin-top:10px;font-size:12px;color:#e5e7eb;">
+              Small, consistent effort beats extreme workouts done once.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">What you can do here</div>
+        <p class="subtext">
+          Use the tools on the left to slowly build a healthier routine.
+        </p>
+        <ul class="list">
+          <li class="list-item">
+            <div class="list-item-main">
+              <div class="list-item-title">Calculate & understand your BMI</div>
+              <div class="list-item-sub">Get a quick idea of where you stand.</div>
+            </div>
+            <span class="chip">Start with BMI</span>
+          </li>
+          <li class="list-item">
+            <div class="list-item-main">
+              <div class="list-item-title">Follow structured workout ideas</div>
+              <div class="list-item-sub">Beginner-friendly, simple and short.</div>
+            </div>
+            <span class="chip">No gym needed</span>
+          </li>
+          <li class="list-item">
+            <div class="list-item-main">
+              <div class="list-item-title">Keep tiny progress notes</div>
+              <div class="list-item-sub">Just a few words daily can build a habit.</div>
+            </div>
+            <span class="chip">Local only</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

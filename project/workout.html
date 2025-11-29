@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Workout Plans and Fitness Guide</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+<div class="app-wrapper">
+  <button class="sidebar-toggle" id="sidebarToggle">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <i class="fa-solid fa-dumbbell"></i>
+      </div>
+      <div>
+        <div class="sidebar-title">FitTrack</di>
+        <div class="sidebar-sub">Fitness & Nutrition</div>
+      </div>
+    </div>
+    <div>
+      <div class="nav-section-title">Main</div>
+      <ul class="nav-list">
+        <li><a href="home.html" class="nav-link"><i class="fa-solid fa-house"></i>Home</a></li>
+        <li><a href="login.html" class="nav-link"><i class="fa-solid fa-right-to-bracket"></i>Login</a></li>
+        <li><a href="register.html" class="nav-link"><i class="fa-solid fa-user-plus"></i>Create Account</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="nav-section-title">Tools</div>
+      <ul class="nav-list">
+        <li><a href="bmi.html" class="nav-link"><i class="fa-solid fa-scale-balanced"></i>BMI Calculator</a></li>
+        <li><a href="workouts.html" class="nav-link"><i class="fa-solid fa-person-running"></i>Workout Plans</a></li>
+        <li><a href="diets.html" class="nav-link"><i class="fa-solid fa-bowl-food"></i>Diet Plans</a></li>
+        <li><a href="progress.html" class="nav-link"><i class="fa-solid fa-chart-line"></i>Progress</a></li>
+        <li><a href="faq.html" class="nav-link"><i class="fa-regular fa-circle-question"></i>FAQ</a></li>
+      </ul>
+    </div>
+  </aside>
+  <main class="main">
+    <header class="main-header">
+      <button class="theme-toggle" id="themeToggle">
+        <i class="fa-regular fa-sun"></i>
+        <span>Light mode</span>
+      </button>
+    </header>
+
+    <div class="content">
+      <div class="card">
+        <div class="section-title">Workout Plans</div>
+        <p class="subtext">Pick one routine and repeat it 3–4 times per week. Rest when you need to.</p>
+        <ul class="list">
+          <li class="list-item">
+            <div class="list-item-main">
+              <div class="list-item-title">Beginner Full Body</div>
+              <div class="list-item-sub">
+                Squats 3×10 · Pushups 3×8 · Plank 3×30s
+              </div>
+            </div>
+            <span class="chip">~25 mins</span>
+          </li>
+          <li class="list-item">
+            <div class="list-item-main">
+              <div class="list-item-title">Cardio Blast (No Equipment)</div>
+              <div class="list-item-sub">
+                Jumping Jacks 3×30s · High Knees 3×30s · Burpees 3×10
+              </div>
+            </div>
+            <span class="chip">~20 mins</span>
+          </li>
+          <li class="list-item">
+            <div class="list-item-main">
+              <div class="list-item-title">Core focus</div>
+              <div class="list-item-sub">
+                Crunches 3×15 · Leg raises 3×12 · Side plank 3×20s/side
+              </div>
+            </div>
+            <span class="chip">~15 mins</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

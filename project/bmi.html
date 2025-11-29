@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>BMI Calculator - Fitness Guide</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+<div class="app-wrapper">
+
+  <button class="sidebar-toggle" id="sidebarToggle">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <aside class="sidebar">
+    <!-- same sidebar -->
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <i class="fa-solid fa-dumbbell"></i>
+      </div>
+      <div>
+        <div class="sidebar-title">FitTrack</div>
+        <div class="sidebar-sub">Fitness & Nutrition</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="nav-section-title">Main</div>
+      <ul class="nav-list">
+        <li><a href="home.html" class="nav-link"><i class="fa-solid fa-house"></i>Home</a></li>
+        <li><a href="login.html" class="nav-link"><i class="fa-solid fa-right-to-bracket"></i>Login</a></li>
+        <li><a href="register.html" class="nav-link"><i class="fa-solid fa-user-plus"></i>Create Account</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="nav-section-title">Tools</div>
+      <ul class="nav-list">
+        <li><a href="bmi.html" class="nav-link"><i class="fa-solid fa-scale-balanced"></i>BMI Calculator</a></li>
+        <li><a href="workouts.html" class="nav-link"><i class="fa-solid fa-person-running"></i>Workout Plans</a></li>
+        <li><a href="diets.html" class="nav-link"><i class="fa-solid fa-bowl-food"></i>Diet Plans</a></li>
+        <li><a href="progress.html" class="nav-link"><i class="fa-solid fa-chart-line"></i>Progress</a></li>
+        <li><a href="faq.html" class="nav-link"><i class="fa-regular fa-circle-question"></i>FAQ</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="main-header">
+      <button class="theme-toggle" id="themeToggle">
+        <i class="fa-regular fa-sun"></i>
+        <span>Light mode</span>
+      </button>
+    </header>
+
+    <div class="content">
+      <div class="card">
+        <div class="section-title">BMI Calculator</div>
+        <p class="subtext">Enter your details and get a quick estimation. This is not a medical diagnosis.</p>
+
+        <div class="form-group">
+          <label>Weight (kg)</label>
+          <input id="bmiWeight" type="number" placeholder="e.g., 68">
+        </div>
+
+        <div class="form-group">
+          <label>Height (cm)</label>
+          <input id="bmiHeight" type="number" placeholder="e.g., 170">
+        </div>
+
+        <button class="btn-full" onclick="handleBMI()">
+          <i class="fa-solid fa-calculator"></i> Calculate BMI
+        </button>
+
+        <div class="bmi-result" id="bmiResult"></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+function handleBMI(){
+  const w = parseFloat(document.getElementById('bmiWeight').value);
+  const h = parseFloat(document.getElementById('bmiHeight').value);
+  const result = document.getElementById('bmiResult');
+
+  const bmi = calculateBMI(w, h);
+  if (!bmi){
+    result.textContent = 'Please enter valid values for weight and height.';
+    return;
+  }
+
+  let status = '';
+  if (bmi < 18.5) status = 'Underweight';
+  else if (bmi < 25) status = 'Normal';
+  else if (bmi < 30) status = 'Overweight';
+  else status = 'Obese';
+
+  result.innerHTML = `Your BMI is <strong>${bmi}</strong> — <em>${status}</em>.`;
+}
+</script>
+
+</body>
+</html>
